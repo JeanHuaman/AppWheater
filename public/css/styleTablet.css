@@ -1,0 +1,39 @@
+.body{
+    display: flex;
+}
+.mainWeather{
+    width: 50%;
+    max-width: 40rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.cards{
+    margin-top: 8rem;
+    column-gap: .5rem;
+    justify-content: space-evenly;
+}
+.card__title{
+    font-size:1.7rem ;
+}
+.searcher{
+    position: absolute;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.searcher__form{
+    justify-content: space-between;
+}
+.closed{
+    cursor: pointer;
+}
+.cityArrow{
+    transition: opacity .5s ease;
+}
+
+.listCity__item:hover .cityArrow{
+    opacity: 1;
+}
+.listCity__item:hover{
+    outline: 1px solid var(--text-color);
+}

@@ -1,26 +1,28 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+<div class="body">
+  <main-weather></main-weather>
+  <main class="main">
+    <cards-weather></cards-weather>
+    <information-weather></information-weather>
+    <footer class="footer">create by <span class="author">Jean Huaman</span> - devChallenges.io</footer>
+  </main>
+</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import CardsWeather from './components/CardsWeather.vue'
+import MainWeather from './components/MainWeather.vue'
+import InformationWeather from '@/components/InformationWeather'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    MainWeather,
+    CardsWeather,
+    InformationWeather
+    
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+

@@ -26,7 +26,7 @@ export default createStore({
     async searchLatLon({commit,state},datos){
       try{
 
-        const res = await fetch(`https://cors.bridged.cc/https://www.metaweather.com/api/location/search/?lattlong=${datos.latitud},${datos.longitud}`),
+        const res = await fetch(`https://cors.bridged.cc/https://www.metaweather.com/api/location/search/?lattlong=${datos.latitud || -12.043600},${datos.longitud || -77.021217}`),
         data = await res.json();
         commit("setLocation",data[0])
       } catch(err){

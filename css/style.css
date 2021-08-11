@@ -1,0 +1,325 @@
+:root{
+--main-background : #100e1d;
+--second-background : #1E213A;
+--text-color : #A09FB1;
+--barra :#FFEC65;
+--button : #3C47E9;
+--grade-f : #585676;
+--grade-c:#E7E7EB;
+}
+*,*::after,*::before{
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 50%;
+    font-family: 'Raleway', sans-serif;
+}
+body{
+    margin: 0;
+    background-color: var(--main-background);
+}
+img{
+    max-width: 100%;
+}
+ul{
+    list-style-type: none;
+}
+.body{
+    min-height: 100vh;
+}
+.mainWeather{    
+    color: var(--text-color);
+    background-repeat: no-repeat;
+    background-size: 120%, 100%;
+    background-position:  top 3rem left 50%,0 0;
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    padding-bottom: 7rem;
+}
+
+.mainWeather::after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(30, 33, 58, .9);
+    z-index: -1;
+}
+.mainWeather__header{
+    display: flex;
+    align-self: stretch;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: .8rem;
+    margin-left: 1.2rem;
+    margin-right: 1.2rem;
+}
+.mainWeather__button{
+    color: #E7E7EB;
+    padding: .8rem 1rem;
+    background-color: #6E707A;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+.mainWeather__location-icon{
+    background-color: #6E707A;
+    color: #E7E7EB;
+    border-radius: 50%;
+    padding: .7rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.mainWeather__img{
+    width: 30%;
+    margin-top: 4rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.mainWeather__grade{
+    font-size: 11rem;
+    color: #E7E7EB;
+    margin-bottom: .8rem;
+    margin-top: .8rem;
+}
+.mainWeather__grade span{
+    font-size: 10rem;
+    color: var(--text-color);
+}
+.mainWeather__timeName{
+    font-size: 4.2rem;
+    margin-top: 3.2rem;
+    margin-bottom: 3.2rem;
+}
+.mainWeather__date{
+    font-size: 1.8rem;
+    color: #88869D;
+}
+.mainWeather__city{
+    font-size: 1.8rem;
+    color: #88869D;
+}
+.mainWeather__city span{
+    margin-left: .5rem;
+}
+
+/********** CARD ************/
+.card{
+    background-color: var(--second-background);
+    width: 100%;
+    color: #E7E7EB;
+    text-align: center;
+    padding-left:1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;   
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.card__img{
+    width: 7rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.card__gradees{
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.8rem;
+}
+.card__gradeeMin{
+    color: var(--text-color);
+}
+
+/********* CARDS ********/
+.cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,15rem);
+    justify-content: center;
+    column-gap: 1rem;
+    margin-left: auto;
+    margin-right: auto;    
+    padding-top: 1rem;
+    width: 90%;
+}
+/********* Information *******/
+.information{
+    color: #E7E7EB;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.informationCard{
+    background-color: var(--second-background);
+    width: 90%;
+    max-width: 35rem;
+    padding-top: .1rem;
+    padding-bottom: 3rem;
+    text-align: center;
+    font-size: 1.6rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.barProgress{
+    width: 20rem;
+    margin-left: auto;
+    margin-right: auto;
+    height: 1rem;
+    margin-top: 2rem;
+    border-radius: 1rem;
+    position: relative;
+    background-color: #E7E7EB;
+}
+.barContent{
+    width: 15rem;
+    background-color: var(--barra);
+    height: inherit;
+    border-top-left-radius: inherit;
+    border-bottom-left-radius: inherit;
+}
+.barValue{
+    color: #A09FB1;
+    font-size: 1.2rem;
+    position: absolute;
+    top:-16px;
+    display: block;
+    width: 100%;
+}
+.barValue::after,.barValue::before{
+    position: absolute;
+}
+.barValue::before{
+    content: "0";
+    left: 0;
+}
+.barValue::after{
+    content: "100";
+    right: 0;
+}
+.information__title{
+    font-size: 2.4rem;
+    width: 100%;
+}
+.information__subtitle{
+    font-size: 1.6rem;
+    font-weight: 300;
+}
+.information__value{
+    font-size: 6.4rem;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    font-weight: 700;
+}
+.information__value span{
+    font-size: 4rem;
+    font-weight: 300;
+}
+.information__icon{
+    background-color: rgba(0,0,0,.3);
+    font-size: 1.2rem;
+    padding: 1rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+    transform: rotate(180deg);
+}
+.footer{
+    color: var(--text-color);
+    font-size: 1.4rem;
+    text-align: center;
+    margin-top: .5rem;
+}
+.author{
+    font-weight: 700;
+}
+
+/********** Searcher ***********/
+.searcher{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--second-background);
+    transition: opacity .3s ease,visibility .3s ease;
+}
+.no-visible{
+    opacity: 0;
+    visibility: hidden;
+}
+.closed{
+    background-color: transparent;
+    font-size: 2rem;
+    color: var(--text-color);
+    border: none;
+    display: block;
+    padding-top: 1rem;
+    padding-bottom:1rem;
+    width: 100%;
+    text-align: right;
+}
+.searcher__form{
+    display: flex;
+    justify-content: space-around;
+}
+.searcher__container{
+    border:1px solid #E7E7EB;
+    width: 70%;
+    display: flex;
+    color: #616475;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1.2rem;
+}
+.searcher__search{
+    height: inherit;
+    outline-style: none;
+    border-style: none;
+    background-color: inherit;
+    color: white;
+}
+.searcher__icon{
+    font-size: 1.5rem;
+    padding-right: 1.2rem;
+}
+.searcher__button{
+    color: #E7E7EB;
+    background-color: var(--button);
+    border-style: none;
+    width: 8rem;
+    cursor: pointer;
+}
+::placeholder{
+    color: #616475;
+}
+.cityArrow{
+    opacity: 0;
+}
+.listCity{
+    padding-left: 1rem;
+    padding-bottom: 1.5rem;
+    padding-right: 1rem;
+    height: 80%;
+    overflow-y: auto;
+    margin-top: 1.5rem;
+}
+.listCity__item{
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem .5rem;
+    margin-top: 1rem;
+    font-size: 1.6rem;
+    text-align: left;
+    color: #E7E7EB;
+    cursor: pointer;
+}

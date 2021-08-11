@@ -26,7 +26,7 @@ export default createStore({
     async searchLatLon({commit,state},datos){
       try{
 
-        const res = await fetch(`https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/search/?lattlong=${datos.latitud || -12.043600},${datos.longitud || -77.021217}`,{
+        const res = await fetch(`https://cors.bridged.cc/https://www.metaweather.com/api/location/search/?lattlong=${datos.latitud || -12.043600},${datos.longitud || -77.021217}`,{
           mode:"cors"
         }),
         data = await res.json();
@@ -39,7 +39,7 @@ export default createStore({
     async searchCity({commit,state},city){
       try{
 
-        const data = await fetch(`https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/search/?query=${city}`,{
+        const data = await fetch(`https://cors.bridged.cc/https://www.metaweather.com/api/location/search/?query=${city}`,{
           mode:"cors"
         }),
         array= await data.json();
@@ -52,7 +52,7 @@ export default createStore({
     async searchForId({commit},id){
       try{
 
-        const data = await fetch(`https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${id}/`,{
+        const data = await fetch(`https://cors.bridged.cc/https://www.metaweather.com/api/location/${id}/`,{
           mode:"cors"
         }),
         dates = await data.json();
